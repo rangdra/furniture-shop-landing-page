@@ -2,10 +2,11 @@
 
 @import 'nav.css';
 :root {
-  --color-dark: #1b1c22;
-  --color-primary: #afa798;
-  --color-primary-bold: #938071;
+  --text-color-dark: #1b1c22;
+  --text-color-primary: #afa798;
+  --text-color-primary-bold: #938071;
   --padding-mobile: 0.8rem 1rem;
+  --body-color: #f9fafb;
 }
 
 html {
@@ -21,8 +22,22 @@ html {
 
 body {
   line-height: 1.6;
-  background-color: #f9fafb;
+  background-color: var(--body-color);
   overflow-x: hidden;
+}
+
+/*========== Variables Dark theme ==========*/
+body.dark-theme {
+  --text-color-dark: #fff;
+  --body-color: #1f2937;
+}
+
+/*========== Button Dark/Light ==========*/
+.change-theme {
+  color: var(--text-color-dark);
+  font-size: 1.25rem;
+  cursor: pointer;
+  margin-left: 8px;
 }
 
 h2,
@@ -43,20 +58,20 @@ ul {
 }
 
 .btn {
-  border: 1px solid var(--color-primary);
+  border: 1px solid var(--text-color-primary);
   padding: 10px 15px;
   background-color: transparent;
   border-radius: 4px;
   transition: 0.2s;
-  color: var(--color-primary);
+  color: var(--text-color-primary);
   cursor: pointer;
   display: flex;
   align-items: center;
 }
 
 .btn:hover {
-  border-color: var(--color-primary-bold);
-  color: var(--color-primary-bold);
+  border-color: var(--text-color-primary-bold);
+  color: var(--text-color-primary-bold);
 }
 
 /* Scroll top */
@@ -68,7 +83,7 @@ ul {
   justify-content: center;
   align-items: center;
   padding: 0.3rem;
-  background: var(--color-primary);
+  background: var(--text-color-primary);
   border-radius: 0.4rem;
   z-index: 99;
   transition: 0.4s;
@@ -76,7 +91,7 @@ ul {
 }
 
 .scrolltop:hover {
-  background-color: var(--color-primary-bold);
+  background-color: var(--text-color-primary-bold);
 }
 
 .scrolltop__icon {
@@ -111,14 +126,16 @@ section.hero {
 .hero__title {
   font-size: 1.75rem;
   margin-bottom: 11px;
+  color: var(--text-color-dark);
 }
 
 .hero__title span {
-  color: var(--color-primary);
+  color: var(--text-color-primary);
 }
 
 .hero__subtitle {
   margin-bottom: 1.5rem;
+  color: var(--text-color-dark);
 }
 
 .hero__btn {
@@ -148,19 +165,23 @@ section.services {
 .services__info {
   text-align: center;
 }
+.services__info ul li {
+  color: var(--text-color-dark);
+}
 .services__info ul li span {
-  color: var(--color-primary);
+  color: var(--text-color-primary);
   font-size: 1.5rem;
 }
 .services__title {
   font-size: 1.75rem;
-  color: var(--color-dark);
+  color: var(--text-color-dark);
 }
 .services__title span {
-  color: var(--color-primary);
+  color: var(--text-color-primary);
 }
 .services__subtitle {
   margin: 10px 0;
+  color: var(--text-color-dark);
 }
 
 /* Blog */
@@ -171,13 +192,13 @@ section.blog {
 
 .blog__title {
   text-align: center;
-  color: var(--color-dark);
+  color: var(--text-color-dark);
   font-size: 34px;
   margin-bottom: 1rem;
 }
 
 .blog__title span {
-  color: var(--color-primary);
+  color: var(--text-color-primary);
 }
 
 .card__blog {
@@ -220,7 +241,7 @@ section.download {
 .download__title,
 .download__subtitle {
   text-align: center;
-  color: var(--color-dark);
+  color: var(--text-color-dark);
 }
 
 .download__title {
@@ -228,7 +249,7 @@ section.download {
 }
 
 .download__title span {
-  color: var(--color-primary);
+  color: var(--text-color-primary);
 }
 
 .download__subtitle {
@@ -246,7 +267,7 @@ section.download {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: var(--color-primary);
+  background-color: var(--text-color-primary);
   padding: 1rem;
   margin: -0.8rem -1rem;
 }
@@ -267,7 +288,7 @@ footer {
 
 footer ul h3 {
   font-size: 20px;
-  color: var(--color-dark);
+  color: var(--text-color-dark);
   margin-bottom: 0.25rem;
 }
 
@@ -277,6 +298,7 @@ footer ul h3 {
 
 footer ul {
   margin-bottom: 1rem;
+  color: var(--text-color-dark);
 }
 
 .icon__sosmed::before {
@@ -388,6 +410,10 @@ footer ul {
     padding-right: 1.5rem;
   }
 
+  h3.card__title {
+    padding-left: 0;
+  }
+
   section.download {
     padding: 0;
     display: grid;
@@ -410,7 +436,7 @@ footer ul {
     right: 0;
     width: 100%;
     height: 100%;
-    background-color: var(--color-primary);
+    background-color: var(--text-color-primary);
   }
 
   .download__phone img,

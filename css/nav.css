@@ -1,8 +1,14 @@
 :root {
-  --color-dark: #1b1c22;
-  --color-primary: #afa798;
-  --color-primary-bold: #938071;
+  --text-color-dark: #1b1c22;
+  --text-color-primary: #afa798;
+  --text-color-primary-bold: #938071;
   --padding-mobile: 0.8rem 1rem;
+  --body-color: #f9fafb;
+  --color-menu-icon: #1b1c22;
+}
+
+body.dark-theme {
+  --color-menu-icon: #fff;
 }
 
 nav {
@@ -19,7 +25,7 @@ nav {
   z-index: 99;
 }
 nav .logo {
-  color: var(--color-dark);
+  color: var(--text-color-dark);
   font-size: 35px;
   font-weight: 600;
 }
@@ -32,7 +38,7 @@ nav ul li {
   margin: 0 5px;
 }
 nav ul li a {
-  color: var(--color-primary-bold);
+  color: var(--text-color-dark);
   text-decoration: none;
   font-size: 18px;
   font-weight: 500;
@@ -51,6 +57,7 @@ nav ul li a:hover {
   font-size: 2rem;
   display: none;
   cursor: pointer;
+  color: var(--color-menu-icon);
 }
 
 #nav-toggle:hover {
@@ -58,15 +65,15 @@ nav ul li a:hover {
 }
 
 nav ul li a.download {
-  border: 1px solid var(--color-primary);
+  border: 1px solid var(--text-color-dark);
   border-radius: 9999px;
   font-size: 1rem;
   transition: 0.2s;
 }
 
 nav ul li a.download:hover {
-  border: 1px solid var(--color-dark);
-  color: var(--color-dark);
+  border: 1px solid var(--text-color-dark);
+  color: var(--text-color-dark);
   background: transparent;
 }
 
@@ -81,19 +88,19 @@ nav ul li a.download:hover {
   }
   nav ul {
     position: fixed;
-    top: -100%;
-    left: 0;
-    height: 50vh;
+    top: 80px;
+    left: -100%;
+    height: 100vh;
     width: 100%;
     text-align: center;
     display: block;
     transition: all 0.3s ease;
-    background-color: #f9fafb;
+    background-color: var(--body-color);
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   }
 
   .show-menu {
-    top: 80px;
+    left: 0;
   }
 
   nav ul li {
@@ -113,9 +120,13 @@ nav ul li a.download:hover {
     background: none;
     color: cyan;
   }
+
+  li.btn__download {
+    padding: 0 2rem;
+  }
 }
 
 .scroll-header {
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  background-color: #f9fafb;
+  background-color: var(--body-color);
 }
