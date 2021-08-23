@@ -10,6 +10,8 @@
 }
 
 html {
+  overflow-x: hidden;
+  scroll-padding-top: 7rem;
   scroll-behavior: smooth;
 }
 
@@ -23,16 +25,13 @@ html {
 body {
   line-height: 1.6;
   background-color: var(--body-color);
-  overflow-x: hidden;
 }
 
-/*========== Variables Dark theme ==========*/
 body.dark-theme {
   --text-color-dark: #fff;
   --body-color: #1f2937;
 }
 
-/*========== Button Dark/Light ==========*/
 .change-theme {
   color: var(--text-color-dark);
   font-size: 1.25rem;
@@ -347,7 +346,7 @@ footer ul {
     grid-template-areas:
       'satu tiga'
       'dua tiga';
-    gap: 20px;
+    grid-gap: 20px;
   }
 
   .img__services__1 {
